@@ -26,8 +26,8 @@ jobs:
         git init -b gh-pages
         git config user.name 'GitHub Actions'
         git config user.email 'mthundershock@gmail.com'
-        git add .
-        git commit -m 'Deploy to GitHub Pages'
+        echo "git add ."
+        echo "git commit -m 'Deploy to GitHub Pages'"
         git status
         git branch
         git remote -v
