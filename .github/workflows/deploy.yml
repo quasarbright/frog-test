@@ -1,0 +1,34 @@
+name: deploy
+on: {push: {branches: [master]}}
+defaults:
+  run:
+    working-directory: repo
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with: { path: repo }
+    - uses: Bogdanp/setup-racket@v1.5
+      with:
+        version: '8.7'
+        dest: '$GITHUB_WORKSPACE/racket'
+        sudo: never
+    - name: install
+      run: |
+        raco pkg install --batch --installation --auto --update-deps
+    - name: build
+      run: |
+        raco frog -b
+    - name: deploy
+      run: |
+        pwd
+        ls -a
+        cd output
+        git init -b gh-pages
+        git config user.name 'GitHub Actions'
+        git config user.email 'mthundershock@gmail.com'
+        git add .
+        git commit -m 'Deploy to GitHub Pages'
+        git status
+        echo "git push --force 'https://quasarbright:${{ github.token }}@github.com/${{ github.repository }}' gh-pages"
