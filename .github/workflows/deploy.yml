@@ -21,7 +21,7 @@ jobs:
         raco pkg install --batch --no-docs --installation --auto --update-deps
     - name: build
       run: |
-        echo "raco frog -b"
+        raco frog -b
     - name: deploy
       run: |
         git checkout --orphan gh-pages
