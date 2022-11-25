@@ -28,6 +28,7 @@ jobs:
         git config user.email 'mthundershock@gmail.com'
         echo "git add ."
         echo "git commit -m 'Deploy to GitHub Pages'"
+        git fetch
         git status
         git branch
         git remote -v
