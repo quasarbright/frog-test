@@ -16,11 +16,11 @@ jobs:
         sudo: never
     - name: install
       run: |
-        raco pkg install --batch --installation --auto --update-deps frog
-        raco pkg install --batch --installation --auto --update-deps
+        echo "raco pkg install --batch --installation --auto --update-deps frog"
+        echo "raco pkg install --batch --installation --auto --update-deps"
     - name: build
       run: |
-        raco frog -b
+        echo "raco frog -b"
     - name: deploy
       run: |
         git init -b gh-pages
@@ -30,5 +30,5 @@ jobs:
         git commit -m 'Deploy to GitHub Pages'
         git status
         git branch
-        git remote -V
+        git remote -v
         echo "git push --force origin gh-pages"
