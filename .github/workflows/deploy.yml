@@ -1,3 +1,4 @@
+# initially copied from https://github.com/lexi-lambda/lexi-lambda.github.io/blob/e49b4c99b3e09ad65f23f3a23db70ee9122e568d/.github/workflows/deploy.yml
 name: deploy
 on: {push: {branches: [master]}}
 defaults:
@@ -16,8 +17,8 @@ jobs:
         sudo: never
     - name: install
       run: |
-        raco pkg install --batch --installation --auto --update-deps frog
-        raco pkg install --batch --installation --auto --update-deps
+        raco pkg install --batch --no-docs --installation --auto --update-deps frog
+        raco pkg install --batch --no-docs --installation --auto --update-deps
     - name: build
       run: |
         echo "raco frog -b"
