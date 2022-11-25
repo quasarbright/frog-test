@@ -1,0 +1,11 @@
+.frog/
+# ignore post directories 
+[0-9][0-9][0-9][0-9]/
+# ignore any generated html
+*.html
+# except for templates
+!*-template.html
+feeds/
+sitemap.txt
+tags/
+
