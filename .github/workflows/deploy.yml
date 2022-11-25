@@ -29,4 +29,6 @@ jobs:
         git add .
         git commit -m 'Deploy to GitHub Pages'
         git status
-        git push --force 'https://quasarbright:${{ github.token }}@github.com/${{ github.repository }}' gh-pages
+        git branch
+        git remote -V
+        echo "git push --force origin gh-pages"
