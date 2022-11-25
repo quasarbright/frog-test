@@ -24,13 +24,8 @@ jobs:
     - name: deploy
       run: |
         git checkout --orphan gh-pages
-        echo "git init -b gh-pages"
         git config user.name 'GitHub Actions'
         git config user.email 'mthundershock@gmail.com'
         git add .
         git commit -m 'Deploy to GitHub Pages'
-        git fetch origin
-        git status
-        git branch
-        git remote -v
         git push --force 'https://quasarbright:${{ github.token }}@github.com/${{ github.repository }}' gh-pages
