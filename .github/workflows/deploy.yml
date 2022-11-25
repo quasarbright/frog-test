@@ -16,6 +16,7 @@ jobs:
         sudo: never
     - name: install
       run: |
+        raco pkg install --batch --installation --auto --update-deps frog
         raco pkg install --batch --installation --auto --update-deps
     - name: build
       run: |
