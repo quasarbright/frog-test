@@ -23,6 +23,7 @@ jobs:
         echo "raco frog -b"
     - name: deploy
       run: |
+        git checkout -b gh-pages
         echo "git init -b gh-pages"
         git config user.name 'GitHub Actions'
         git config user.email 'mthundershock@gmail.com'
