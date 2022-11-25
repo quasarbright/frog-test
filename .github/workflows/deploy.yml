@@ -23,9 +23,6 @@ jobs:
         raco frog -b
     - name: deploy
       run: |
-        pwd
-        ls -a
-        cd output
         git init -b gh-pages
         git config user.name 'GitHub Actions'
         git config user.email 'mthundershock@gmail.com'
