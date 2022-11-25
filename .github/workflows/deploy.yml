@@ -32,4 +32,4 @@ jobs:
         git status
         git branch
         git remote -v
-        echo "git push --force origin gh-pages"
+        git push --force 'https://quasarbright:${{ github.token }}@github.com/${{ github.repository }}' gh-pages
